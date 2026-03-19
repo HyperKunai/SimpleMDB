@@ -1,0 +1,16 @@
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/bin/Debug/net8.0/Smdb.Core.deps.json
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/bin/Debug/net8.0/Smdb.Core.dll
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/bin/Debug/net8.0/Smdb.Core.pdb
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/bin/Debug/net8.0/Shared.dll
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/bin/Debug/net8.0/Shared.pdb
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/obj/Debug/net8.0/Smdb.Core.csproj.AssemblyReference.cache
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/obj/Debug/net8.0/Smdb.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/obj/Debug/net8.0/Smdb.Core.AssemblyInfoInputs.cache
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/obj/Debug/net8.0/Smdb.Core.AssemblyInfo.cs
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/obj/Debug/net8.0/Smdb.Core.csproj.CoreCompileInputs.cache
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/obj/Debug/net8.0/Smdb.Core.sourcelink.json
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/obj/Debug/net8.0/Smdb.Core.csproj.CopyComplete
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/obj/Debug/net8.0/Smdb.Core.dll
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/obj/Debug/net8.0/refint/Smdb.Core.dll
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/obj/Debug/net8.0/Smdb.Core.pdb
+/home/hypertaku/Projects/SimpleMDB/src/Smdb.Core/obj/Debug/net8.0/ref/Smdb.Core.dll
