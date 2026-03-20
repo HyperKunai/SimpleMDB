@@ -6,6 +6,10 @@ using Smdb.Core.Db;
 using Smdb.Core.Movies;
 using Smdb.Api.Actors;
 using Smdb.Core.Actors;
+using Smdb.Api.Users;
+using Smdb.Core.Users;
+using Smdb.Api.ActorMovies;
+using Smdb.Core.ActorMovies;
 
 public class App : HttpServer
 {
@@ -21,6 +25,15 @@ public class App : HttpServer
         var actorServ = new DefaultActorService(actorRepo);
         var actorCtrl = new ActorsController(actorServ);
         var actorRouter = new ActorsRouter(actorCtrl);
+        var userRepo = new MemoryUserRepository(db);
+        var userServ = new DefaultUserService(userRepo);
+        var userCtrl = new UsersController(userServ);
+        var userRouter = new UsersRouter(userCtrl);
+
+        var actorMovieRepo = new MemoryActorMovieRepository(db);
+        var actorMovieServ = new DefaultActorMovieService(actorMovieRepo);
+        var actorMovieCtrl = new ActorMoviesController(actorMovieServ);
+        var actorMovieRouter = new ActorMoviesRouter(actorMovieCtrl);
 
         var apiRouter = new HttpRouter();
 
@@ -35,5 +48,7 @@ public class App : HttpServer
         router.UseRouter("/api/v1", apiRouter);
         apiRouter.UseRouter("/movies", movieRouter);
         apiRouter.UseRouter("/actors", actorRouter);
+        apiRouter.UseRouter("/users", userRouter);
+        apiRouter.UseRouter("/actors-movies", actorMovieRouter);
     }
 }

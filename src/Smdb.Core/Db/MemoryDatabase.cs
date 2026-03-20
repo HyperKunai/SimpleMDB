@@ -2,6 +2,8 @@ namespace Smdb.Core.Db;
 
 using Smdb.Core.Movies;
 using Smdb.Core.Actors;
+using Smdb.Core.Users;
+using Smdb.Core.ActorMovies;
 
 public class MemoryDatabase
 {
@@ -11,6 +13,12 @@ public class MemoryDatabase
     public List<Actor> Actors { get; }
     private int nextActorId;
 
+    public List<User> Users { get; }
+    private int nextUserId;
+
+    public List<ActorMovie> ActorMovies { get; }
+    private int nextActorMovieId;
+
     public MemoryDatabase()
     {
         Movies = new List<Movie>();
@@ -19,6 +27,12 @@ public class MemoryDatabase
         Actors = new List<Actor>();
         SeedActors();
         nextActorId = Actors.Count;
+        Users = new List<User>();
+        SeedUsers();
+        nextUserId = Users.Count;
+        ActorMovies = new List<ActorMovie>();
+        SeedActorMovies();
+        nextActorMovieId = ActorMovies.Count;
     }
 
     private void SeedMovies()
@@ -99,4 +113,37 @@ public class MemoryDatabase
     {
         return ++nextActorId;
     }
+
+    private void SeedUsers()
+    {
+        Users.AddRange(new User[]
+        {
+        new User(1, "admin", "admin123", "admin"),
+        new User(2, "edy", "pass123", "user"),
+        new User(3, "neo", "pass123", "user")
+        });
+    }
+
+    public int NextUserId()
+    {
+        return ++nextUserId;
+    }
+
+    private void SeedActorMovies()
+    {
+        ActorMovies.AddRange(new ActorMovie[]
+        {
+        new ActorMovie(1, 1, 1, "Michael Corleone"),
+        new ActorMovie(2, 2, 13, "James Conway"),
+        new ActorMovie(3, 3, 3, "Bruce Wayne"),
+        new ActorMovie(4, 4, 4, "Red"),
+        new ActorMovie(5, 5, 10, "Cobb")
+        });
+    }
+
+    public int NextActorMovieId()
+    {
+        return ++nextActorMovieId;
+    }
+
 }
