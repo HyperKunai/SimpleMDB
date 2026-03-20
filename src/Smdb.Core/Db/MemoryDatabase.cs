@@ -1,17 +1,24 @@
 namespace Smdb.Core.Db;
 
 using Smdb.Core.Movies;
+using Smdb.Core.Actors;
 
 public class MemoryDatabase
 {
     public List<Movie> Movies { get; }
     private int nextMovieId;
 
+    public List<Actor> Actors { get; }
+    private int nextActorId;
+
     public MemoryDatabase()
     {
         Movies = new List<Movie>();
         SeedMovies();
         nextMovieId = Movies.Count;
+        Actors = new List<Actor>();
+        SeedActors();
+        nextActorId = Actors.Count;
     }
 
     private void SeedMovies()
@@ -74,5 +81,22 @@ public class MemoryDatabase
     public int NextMovieId()
     {
         return ++nextMovieId;
+    }
+
+    private void SeedActors()
+    {
+        Actors.AddRange(new Actor[]
+        {
+        new Actor(1, "Al Pacino", 84, "Legendary actor known for crime dramas."),
+        new Actor(2, "Robert De Niro", 81, "Acclaimed actor from classic gangster films."),
+        new Actor(3, "Christian Bale", 50, "Actor known for intense transformations."),
+        new Actor(4, "Morgan Freeman", 87, "Veteran actor with iconic narration and roles."),
+        new Actor(5, "Leonardo DiCaprio", 50, "Award-winning actor known for major dramas.")
+        });
+    }
+
+    public int NextActorId()
+    {
+        return ++nextActorId;
     }
 }
