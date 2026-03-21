@@ -141,4 +141,4 @@ Easily extendable to SQL or NoSQL databases.
 
 👨‍💻 Author
 
-Edward Navarrteto
+Edward Navarreto
