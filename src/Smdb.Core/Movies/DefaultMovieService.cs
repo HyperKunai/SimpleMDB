@@ -71,22 +71,22 @@ public class DefaultMovieService : IMovieService
         if (id <= 0)
         {
             return new Result<Movie>(
-                new Exception("Movie id must be greater than 0."),
+                new Exception("Movie id must be greater than 0."),   
                 (int)HttpStatusCode.BadRequest
             );
         }
 
-        var movie = await repository.ReadMovie(id);
+        var movie = await repository.ReadMovie(id);                 
 
         if (movie == null)
         {
             return new Result<Movie>(
-                new Exception("Movie not found."),
+                new Exception("Movie not found."),                   
                 (int)HttpStatusCode.NotFound
             );
         }
 
-        return new Result<Movie>(movie);
+        return new Result<Movie>(movie);                                 
     }
 
     public async Task<Result<Movie>> UpdateMovie(int id, Movie newData)
