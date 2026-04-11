@@ -2,55 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Add Movie • Simple Movie Database</title>
+  <title>Add Movie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/styles/main.css" />
   <script type="module" src="/scripts/movies/add.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Add Movie</h1>
+    <h1>➕ Add Movie</h1>
     <nav>
       <ul>
         <li><a href="/" class="btn">Home</a></li>
-        <li><a href="/movies/index.html" class="btn">All Movies</a></li>
+        <li><a href="/movies/index.html" class="btn">Movies</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="container">
-    <div id="status" class="status">Loading...</div>
+    <div id="status" class="status">Ready</div>
 
     <form id="movie-form" class="grid">
       <div class="field">
-        <label for="title">Title</label>
-        <input id="title" name="title" type="text" required />
+        <label>Title</label>
+        <input name="title" required />
       </div>
 
       <div class="field">
-        <label for="year">Year</label>
-        <input
-          id="year"
-          name="year"
-          type="number"
-          min="1888"
-          max="9999"
-          required
-        />
+        <label>Year</label>
+        <input name="year" type="number" required />
       </div>
 
       <div class="field">
-        <label for="description">Description</label>
-        <textarea
-          id="description"
-          name="description"
-          placeholder="Short synopsis…"
-        ></textarea>
+        <label>Description</label>
+        <textarea name="description"></textarea>
       </div>
 
       <div class="form-actions">
-        <button class="btn primary" type="submit">Create</button>
-        <a class="btn" href="/movies/index.html">Cancel</a>
+        <button class="btn primary">Create</button>
+        <a href="/movies/index.html" class="btn">Cancel</a>
       </div>
     </form>
   </main>
