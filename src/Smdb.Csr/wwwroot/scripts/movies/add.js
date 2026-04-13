@@ -11,6 +11,17 @@ import { $, apiFetch, renderStatus, captureMovieForm } from '/scripts/common.js'
 
     const payload = captureMovieForm(form);
 
+    // VALIDATION
+    if (!payload.title) {
+      renderStatus(statusEl, 'err', 'Title is required.');
+      return;
+    }
+
+    if (!payload.year || payload.year < 1888) {
+      renderStatus(statusEl, 'err', 'Year must be valid (>= 1888).');
+      return;
+    }
+
     try {
       const created = await apiFetch('/movies', {
         method: 'POST',

@@ -15,9 +15,11 @@ import { $, apiFetch, renderStatus, getQueryParam, captureMovieForm } from '/scr
 
   try {
     const m = await apiFetch(`/movies/${encodeURIComponent(id)}`);
+
     form.title.value = m.title ?? '';
     form.year.value = m.year ?? '';
     form.description.value = m.description ?? '';
+
     renderStatus(statusEl, 'ok', 'Loaded movie. You can edit and save.');
   } catch (err) {
     renderStatus(statusEl, 'err', `Failed to load data: ${err.message}`);
@@ -28,6 +30,17 @@ import { $, apiFetch, renderStatus, getQueryParam, captureMovieForm } from '/scr
     ev.preventDefault();
 
     const payload = captureMovieForm(form);
+
+    // VALIDATION
+    if (!payload.title) {
+      renderStatus(statusEl, 'err', 'Title is required.');
+      return;
+    }
+
+    if (!payload.year || payload.year < 1888) {
+      renderStatus(statusEl, 'err', 'Year must be valid (>= 1888).');
+      return;
+    }
 
     try {
       const updated = await apiFetch(`/movies/${encodeURIComponent(id)}`, {
